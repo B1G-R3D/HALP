@@ -5,10 +5,11 @@ from . import db   ##means from __init__.py import db
 from flask_login import login_user, login_required, logout_user, current_user
 from website.spotify_client import SpotifyClient
 
+
 #client_id = "63b042243c2548b5b3ebb02756e84cb4"
 #client_secret = "96bc8bc908894f9ab922ac0f0d52127a"
-client_id = 'cfeac2b1230c4ab9b1644d339efbb9ff'
-client_secret = '4f936090b2604b4cabc4382c24289089'
+client_id = '8e2db28f21e749d797722f5dc351e65a'
+client_secret = '38269d3f577d4c34a67e2b2978f8a9e6'
 
 spotify_client = SpotifyClient(client_id, client_secret, port=5000)
 
@@ -35,6 +36,7 @@ def login():
             flash('Email does not exist.', category='error')
 
     return render_template("login.html", user=current_user)
+
 
 
 @auth.route('/logout')

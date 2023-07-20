@@ -50,13 +50,14 @@ class SpotifyClient:
         :param auth_token:
         :return: dict
         """
-
+        print(self.redirect_uri)
         data = {
             "grant_type": "authorization_code",
             "code": str(auth_token),
             "redirect_uri": self.redirect_uri,
             'client_id': self.client_id,
             'client_secret': self.client_secret,
+            
         }
         post_request = requests.post(self.SPOTIFY_TOKEN_URL, data=data)
 
